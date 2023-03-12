@@ -21,17 +21,15 @@ function App() {
     
   })
   return (
-    <div className="App text-gray-800">
+    <div className="App text-gray-800 ">
       <Nav />
 
-      <main>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" setInCart={setInCart} element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
             {productRoutes}
         </Routes>
-      </main>
       
 
     </div>

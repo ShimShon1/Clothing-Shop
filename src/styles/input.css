@@ -8,12 +8,11 @@ body{
 }
 
 .active{
-    color: rgb(80, 80, 80);
+    color: rgb(116, 116, 116);
     
 }
 
 nav > div > ul >  li:hover{
     transition: all 0.5s;
-    font-weight: 600;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.453);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.453);
 }
