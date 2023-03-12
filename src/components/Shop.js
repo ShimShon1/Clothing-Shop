@@ -17,12 +17,22 @@ export default function Shop(props){
    
 
     let itemElements = items.map((item)=>{
-        return <Item image={item.image} name={item.name} desc={item.desc} key={item.id} id={item.id}  />
+        return <Item image={item.image} name={item.name} desc={item.desc} key={item.id} id={item.id} price={item.price}  />
     }) 
+
+
+
+
+
+
     return (
-        <>
-            <div>Shop NOW</div>
-            {itemElements}
-        </>
+        <main className="p-6">
+            <div className="grid justify-center md:grid-cols-2">
+
+                {itemElements}
+
+
+            </div>
+        </main>
     )
 }

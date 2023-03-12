@@ -16,8 +16,9 @@ function App() {
 
 
   let productRoutes = itemsData.map((item)=>{
+    console.log(item.price)
     return <Route path={`/product/${item.id}`} key={item.id}  
-    element={<ItemPage image={item.image} name={item.name} desc={item.desc} /> }/> 
+    element={<ItemPage image={item.image} name={item.name} desc={item.desc} price={item.price} /> }/> 
     
   })
   return (

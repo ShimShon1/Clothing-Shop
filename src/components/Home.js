@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import mainImg from "../images/main.avif"
 
 export default function Home(props){
@@ -26,12 +27,18 @@ export default function Home(props){
                     <span> Delivered to you</span>
                 </p>
 
-
+            <Link to={"/shop"}>
+            
                 <button type="button" className="border-2 shadow-sm rounded-md py-2 px-8 font-semibold 
                     text-xl hover:bg-black bg-gray-800 text-white mt-4 tracking-widest animate-pulse
                     lg:text-2xl ">
                     Shop Now</button>
 
+            
+            
+            
+            </Link>
+             
 
 
 

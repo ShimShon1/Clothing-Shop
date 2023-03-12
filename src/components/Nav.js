@@ -4,9 +4,9 @@ import cartImg from "../images/cart.svg"
 export default function Nav(props){
 
     return (
-        <nav className=" bg-gray-800 text-white  w-full ">
+        <nav className=" bg-gray-800 text-white  w-full sticky  top-0">
 
-            <div className="flex sticky top-0 justify-around items-center p-4 pl-0 lg:w-2/3 lg:justify-between lg:p-6 lg:pl-8 ">
+            <div className="flex  justify-around items-center p-4 pl-0 lg:w-2/3 lg:justify-between lg:p-6 lg:pl-8 ">
 
                 <Link to={'/'} className="self-start"><span className="text-lg font-semibold md:text-xl lg:text-2xl ">Clothing | Shop</span></Link> 
                 
