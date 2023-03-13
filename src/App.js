@@ -30,15 +30,19 @@ function App() {
 
       } 
      else if(item.id === id){
-          
-       setInCart(
-        inCart.map((item)=>{
-          
-          return{
-            ...item,
-            amount:item.amount + Number(amount)
-          }
+      setInCart(
       
+        inCart.map((item)=>{
+          if(item.id === id){
+  
+            return{
+              ...item,
+              amount:Number(amount) + Number(item.amount)
+            }
+  
+          }else{
+            return item 
+          }
         })
        )
       }
@@ -47,6 +51,25 @@ function App() {
 
   }
 
+
+  function changeAmount(e,id){
+    let amount = e.target.value
+    setInCart(
+      
+      inCart.map((item)=>{
+        if(item.id === id){
+
+          return{
+            ...item,
+            amount:amount 
+          }
+
+        }else{
+          return item 
+        }
+      })
+     )
+  }
 
 
 
@@ -69,12 +92,12 @@ function App() {
 
   return (
     <div className="App text-gray-800 ">
-      <Nav />
+      <Nav inCart={inCart}/>
 
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart inCart={inCart} removeCartItem={removeCartItem}  />}/>
+            <Route path="/cart" element={<Cart inCart={inCart} changeAmount={changeAmount} removeCartItem={removeCartItem}  />}/>
             {productRoutes}
         </Routes>
       
