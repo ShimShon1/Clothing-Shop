@@ -27,7 +27,8 @@ export default function Shop(props){
 
     return (
         <main className="p-6">
-            <div className="grid justify-center md:grid-cols-2">
+            <div className="grid justify-center md:grid-cols-2 lg:grid-cols-4 md:gap-4
+            ">
 
                 {itemElements}
 

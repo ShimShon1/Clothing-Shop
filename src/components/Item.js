@@ -2,22 +2,21 @@ import { Link } from "react-router-dom";
 
 export default function Item(props){
 
-    console.log(props)
     return (
         
         <Link
         
         to={`/product/${props.id}`}>
         
-            <div className="shadow-md h-full grid justify-center ">
+            <div className="shadow-md shadow-slate-400  grid justify-center hover:bg-gray-200 ">
 
 
-                    <img className="h-full"  src={props.image} alt="" />
+                    <img className="md:max-h-80"  src={props.image} alt="" />
 
                     <div className="p-4">
                         <hr></hr>
                         <h2 className="text-xl font-semibold text-center">{props.name}</h2>
-                        {/* <p>{props.desc}</p> */}
+                        <p className=" text-lg text-center">{props.price}</p>
 
                     </div>
 

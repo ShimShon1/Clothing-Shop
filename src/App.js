@@ -7,28 +7,64 @@ import itemsData from "./itemsData";
 import ItemPage from "./components/ItemPage";
 import { useState } from "react";
 
-
-
 function App() {
-
+  const [allItems,setAllItems] = useState(itemsData)
   const [inCart,setInCart] = useState([])
 
 
 
+
+  function updateCart(e,id,amount){
+    e.preventDefault()
+   console.log(inCart)
+
+    for(let item of allItems){
+
+      if(item.id === id && !inCart.some((cartI)=>cartI.id === id) ){
+        setInCart([
+          ...inCart,
+          {
+            ...item,
+            amount:Number(amount)
+          }
+        ])
+
+      } 
+     else if(item.id === id){
+          
+       setInCart(
+        inCart.map((item)=>{
+          
+          return{
+            ...item,
+            amount:item.amount + Number(amount)
+          }
+      
+        })
+       )
+      }
+
+    }
+
+  }
+  console.log(inCart)
+
   let productRoutes = itemsData.map((item)=>{
-    console.log(item.price)
     return <Route path={`/product/${item.id}`} key={item.id}  
-    element={<ItemPage image={item.image} name={item.name} desc={item.desc} price={item.price} /> }/> 
+    element={<ItemPage image={item.image} name={item.name} desc={item.desc} price={item.price}
+    updateCart={updateCart} id={item.id} /> } /> 
     
   })
+
+
   return (
     <div className="App text-gray-800 ">
       <Nav />
 
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/shop" setInCart={setInCart} element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart inCart={inCart} />} />
             {productRoutes}
         </Routes>
       
