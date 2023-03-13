@@ -4,7 +4,6 @@ import CartItem from "./CartItem"
 
 
 export default function Cart(props){
-    console.log(props)
 
     let cartElements = props.inCart.map((item)=>{
         return <CartItem name={item.name} price={item.price} id={item.id} image={item.image} amount={item.amount} 
@@ -14,7 +13,6 @@ export default function Cart(props){
 
     let totalPrice = props.inCart.reduce((accu,item)=> accu + (item.price * item.amount),0)
 
-    console.log(totalPrice)
     return (
         <main className="p-4 grid gap-6 ">
                 <header className=" grid grid-cols-3 leading-loose text-lg items-center text-center md:text-xl lg:text-2xl">
