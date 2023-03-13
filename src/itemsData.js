@@ -1,4 +1,4 @@
-import orangeShirt from "../src/images/grayPants.png"
+import orangeShirt from "../src/images/orangeShirt.png"
 import grayPants from "../src/images/grayPants.png"
 import blackShirt from "../src/images/black.png"
 import brownPants from "../src/images/brownPants.png"
