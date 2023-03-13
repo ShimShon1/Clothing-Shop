@@ -16,6 +16,7 @@ import stripedBlue from "../src/images/stripedBlue.png"
 
 
 
+
  let itemsData =[
     {name:"Black Shirt",image:blackShirt,id:1,price:14.99, gender:"men"
     ,desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et tellus nibh. Cras scelerisque purus sit amet pellentesque mollis. Pellentesque ac mollis est. Suspendisse quis neque urna."},
