@@ -11,11 +11,11 @@ export default function Home(props){
 
 
             <img 
-            className="hidden h-full w-full lg:block"
+            className="h-full z-0 absolute w-full  blur-sm lg:block lg:relative lg:blur-none"
             src={mainImg} alt="" />
 
-            <section className="p-10 lg:p-20  flex flex-col gap-6  
-             md:w-1/2 lg:w-full items-center lg:items-start tracking-wider ">
+            <section className="relative z-10 bg-white bg-opacity-70 p-10 lg:p-20  flex flex-col gap-6  
+              lg:w-full items-center lg:items-start tracking-wider ">
 
             <h1 className="text-4xl lg:text-5xl font-semibold p-0">Clothing | Shop</h1>
 
