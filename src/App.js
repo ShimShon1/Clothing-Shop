@@ -16,7 +16,6 @@ function App() {
 
   function updateCart(e,id,amount){
     e.preventDefault()
-   console.log(inCart)
 
     for(let item of allItems){
 
@@ -47,7 +46,18 @@ function App() {
     }
 
   }
-  console.log(inCart)
+
+
+
+
+  function removeCartItem(id){
+    setInCart(
+      inCart.filter((item)=> item.id !== id)
+    )
+
+
+  }
+
 
   let productRoutes = itemsData.map((item)=>{
     return <Route path={`/product/${item.id}`} key={item.id}  
@@ -64,7 +74,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart inCart={inCart} />} />
+            <Route path="/cart" element={<Cart inCart={inCart} removeCartItem={removeCartItem}  />}/>
             {productRoutes}
         </Routes>
       
