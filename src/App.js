@@ -10,12 +10,12 @@ import { useEffect, useState } from "react";
 function App() {
   const [allItems,setAllItems] = useState(itemsData)
   const [inCart,setInCart] = useState([])
+  localStorage.setItem("cart",'[]')
 
 
   useEffect(()=>{
 
     let lastCart = JSON.parse(localStorage.getItem("cart"))
-    
     if(lastCart.length > 0){
       setInCart(lastCart)
     }
