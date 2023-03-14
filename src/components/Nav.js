@@ -15,7 +15,8 @@ export default function Nav(props){
 
 
                     <li className="relative"><NavLink to={'/cart'}><img src={cartImg} alt="" /></NavLink>
-                    {props.inCart.length > 0 && <span className="text-sm  absolute top-3 bg-white text-black w-3 text-center rounded-[60%]">{props.inCart.length}</span>}
+                    {props.inCart.length > 0 && 
+                    <span className="text-sm  absolute top-3 bg-white text-black w-3 text-center rounded-[60%]">{props.inCart.length}</span>}
                     </li>
                 </ul>
 

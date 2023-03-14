@@ -7,7 +7,15 @@ export default function ItemPage(props){
         setAmount(e.target.value)
     }
     
-    
+    function addFeedback(){
+        let noti = document.querySelector(".feedback")
+        noti.id = 'feedback'
+
+        setTimeout(() => {
+            noti.id = ''
+            
+        }, 5000);
+    }
     
     return (
             <main className="flex flex-col space-y-6 lg:space-y-0 p-6 items-center lg:grid grid-cols-3  shadow-lg shadow-slate-400
@@ -31,7 +39,10 @@ export default function ItemPage(props){
                             {props.price}$</p>
 
 
-                        <form onSubmit={(e)=>props.updateCart(e,props.id,amount)} className="flex gap-2 justify-center lg:justify-start p-2">
+                        <form onSubmit={(e)=>{
+                            props.updateCart(e,props.id,amount)
+                            addFeedback()
+                            }} className="flex gap-2 justify-center lg:justify-start p-2">
                             <button className="active:bg-emerald-100 bg-emerald-400 text-xl lg:text-2xl  rounded-sm py-2 font-semibold px-6 hover:bg-emerald-300">Add To Cart</button>
 
 
@@ -46,6 +57,11 @@ export default function ItemPage(props){
                             </form>
 
                     </section>
+
+
+                    <div  className="opacity-0 feedback fixed bottom-0 left-0 text-center text-white bg-gray-700 w-full p-6 text-xl md:text-2xl lg:text-2xl ">
+                        Item has been added to your cart
+                    </div>
                 
             </main>
         

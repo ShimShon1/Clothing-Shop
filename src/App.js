@@ -5,13 +5,32 @@ import Shop from "./components/Shop";
 import Cart from "./components/Cart";
 import itemsData from "./itemsData";
 import ItemPage from "./components/ItemPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [allItems,setAllItems] = useState(itemsData)
   const [inCart,setInCart] = useState([])
 
 
+  useEffect(()=>{
+
+    let lastCart = JSON.parse(localStorage.getItem("cart"))
+    
+    if(lastCart.length > 0){
+      setInCart(lastCart)
+    }
+
+
+  },[])
+
+
+
+  useEffect(()=>{
+
+    localStorage.setItem("cart",JSON.stringify(inCart))
+
+
+  },[inCart])
 
 
   function updateCart(e,id,amount){
@@ -88,7 +107,7 @@ function App() {
     updateCart={updateCart} id={item.id} /> } /> 
     
   })
-
+  
 
   return (
     <div className="App text-gray-800 ">
