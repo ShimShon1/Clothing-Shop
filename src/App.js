@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 function App() {
   const [allItems,setAllItems] = useState(itemsData)
   const [inCart,setInCart] = useState([])
-  localStorage.setItem("cart",'[]')
 
 
   useEffect(()=>{
