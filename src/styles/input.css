@@ -2,40 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    font-family: 'Karla', sans-serif;
-
+body {
+  font-family: "Karla", sans-serif;
 }
 
-.active{
-    color: rgb(116, 116, 116);
-    
+.active {
+  color: rgb(116, 116, 116);
 }
 
-nav > div > ul >  li:hover{
-    transition: all 0.5s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.453);
+nav > div > ul > li:hover {
+  transition: all 0.5s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.453);
 }
 
-
-#feedback{
-    animation-name: notification;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
+#feedback {
+  animation-name: notification;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
-
-
 
 @keyframes notification {
-    0%{
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    50%{
-        opacity: 100;
-    }
+  50% {
+    opacity: 100;
+  }
 
-    100%{
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
 }
