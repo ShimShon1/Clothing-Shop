@@ -1,4 +1,4 @@
-# CryptoWatch
+# Clothing-Shop
 
 A Clothing Shop site, the user can browse, filter and add clothings to the cart
 
