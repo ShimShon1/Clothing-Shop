@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import mainImg from "../images/main.avif";
 
-export default function Home(props) {
+export default function Home() {
   return (
     <main
       className=" lg:grid grid-cols-2  w-full 

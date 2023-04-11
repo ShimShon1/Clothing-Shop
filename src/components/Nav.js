@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 import cartImg from "../images/cart.svg";
-
 export default function Nav(props) {
   return (
     <nav className=" bg-gray-800 text-white  w-full sticky  top-0">

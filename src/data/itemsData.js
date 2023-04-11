@@ -1,15 +1,15 @@
-import orangeShirt from "../src/images/orangeShirt.png";
-import grayPants from "../src/images/grayPants.png";
-import blackShirt from "../src/images/black.png";
-import brownPants from "../src/images/brownPants.png";
-import girlBlue from "../src/images/girlBlue.png";
-import girlLove from "../src/images/girlLove.png";
-import girlStar from "../src/images/girlStar.png";
-import grayT from "../src/images/grayT.png";
-import menJeans from "../src/images/menJeans.png";
-import shorts from "../src/images/shorts.png";
-import skirt from "../src/images/skirt.png";
-import stripedBlue from "../src/images/stripedBlue.png";
+import orangeShirt from "../../src/images/orangeShirt.png";
+import grayPants from "../../src/images/grayPants.png";
+import blackShirt from "../../src/images/black.png";
+import brownPants from "../../src/images/brownPants.png";
+import girlBlue from "../../src/images/girlBlue.png";
+import girlLove from "../../src/images/girlLove.png";
+import girlStar from "../../src/images/girlStar.png";
+import grayT from "../../src/images/grayT.png";
+import menJeans from "../../src/images/menJeans.png";
+import shorts from "../../src/images/shorts.png";
+import skirt from "../../src/images/skirt.png";
+import stripedBlue from "../../src/images/stripedBlue.png";
 
 let itemsData = [
   {

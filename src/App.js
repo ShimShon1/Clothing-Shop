@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import Cart from "./components/Cart";
-import itemsData from "./itemsData";
-import ItemPage from "./components/ItemPage";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import Cart from "./pages/Cart";
+import itemsData from "./data/itemsData";
+import ItemPage from "./pages/ItemPage";
 import { useEffect, useState } from "react";
 
 function App() {

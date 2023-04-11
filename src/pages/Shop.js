@@ -1,9 +1,8 @@
-import Item from "./Item";
-
-import itemsData from "../itemsData";
+import Item from "../components/Item";
+import itemsData from "../data/itemsData";
 import { useState } from "react";
 
-export default function Shop(props) {
+export default function Shop() {
   const [itemsShown, setItemsShown] = useState(itemsData);
 
   function updateItemsShown(gender = "all") {

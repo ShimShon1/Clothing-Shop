@@ -1,4 +1,4 @@
-import CartItem from "./CartItem";
+import CartItem from "../components/CartItem";
 
 export default function Cart(props) {
   let cartElements = props.inCart.map((item) => {
