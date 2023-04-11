@@ -7,10 +7,11 @@ export default function Cart(props) {
         name={item.name}
         price={item.price}
         id={item.id}
+        key={item.id}
         image={item.image}
         amount={item.amount}
-        removeCartItem={props.removeCartItem}
-        changeAmount={props.changeAmount}
+        inCart={props.inCart}
+        setInCart={props.setInCart}
       />
     );
   });
@@ -21,8 +22,8 @@ export default function Cart(props) {
   );
 
   return (
-    <main className="p-4 grid gap-6 ">
-      <header className=" grid grid-cols-3 leading-loose text-lg items-center text-center md:text-xl lg:text-2xl">
+    <main className="grid gap-6 p-4 ">
+      <header className=" grid grid-cols-3 items-center text-center text-lg leading-loose md:text-xl lg:text-2xl">
         <span className="font-semibold">Item</span>
         <span className="font-semibold">Price</span>
         <span className="font-semibold">Quantity</span>
@@ -30,7 +31,7 @@ export default function Cart(props) {
 
       {cartElements}
 
-      <div className="text-center space-y-4 text-lg md:text-xl lg:text-2xl   font-semibold mt-8">
+      <div className="mt-8 space-y-4 text-center text-lg font-semibold   md:text-xl lg:text-2xl">
         <hr></hr>
         <div>
           Total :{" "}
@@ -41,7 +42,7 @@ export default function Cart(props) {
             : totalPrice.toPrecision(5)}
           $
         </div>
-        <button className="bg-emerald-400  hover:bg-emerald-300 text-xl md:text-2xl lg:text-3xl tracking-wider rounded-sm py-2 font-semibold px-6 ">
+        <button className="rounded-sm  bg-emerald-400 py-2 px-6 text-xl font-semibold tracking-wider hover:bg-emerald-300 md:text-2xl lg:text-3xl ">
           Check Out
         </button>
       </div>

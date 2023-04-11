@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -6,6 +6,7 @@ import Cart from "./pages/Cart";
 import itemsData from "./data/itemsData";
 import ItemPage from "./pages/ItemPage";
 import { useEffect, useState } from "react";
+import Layout from "./components/Layout";
 
 function App() {
   const [allItems, setAllItems] = useState(itemsData);
@@ -13,7 +14,6 @@ function App() {
 
   useEffect(() => {
     let lastCart = JSON.parse(localStorage.getItem("cart"));
-    console.log(lastCart);
     if (lastCart !== undefined && lastCart !== null) {
       if (lastCart.length > 0) {
         setInCart(lastCart);
@@ -54,64 +54,24 @@ function App() {
     }
   }
 
-  function changeAmount(e, id) {
-    let amount = e.target.value;
-    setInCart(
-      inCart.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            amount: amount,
-          };
-        } else {
-          return item;
-        }
-      })
-    );
-  }
-
-  function removeCartItem(id) {
-    setInCart(inCart.filter((item) => item.id !== id));
-  }
-
-  let productRoutes = itemsData.map((item) => {
-    return (
-      <Route
-        path={`/product/${item.id}`}
-        key={item.id}
-        element={
-          <ItemPage
-            image={item.image}
-            name={item.name}
-            desc={item.desc}
-            price={item.price}
-            updateCart={updateCart}
-            id={item.id}
-          />
-        }
-      />
-    );
-  });
-
   return (
     <div className="App text-gray-800 ">
-      <Nav inCart={inCart} />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              inCart={inCart}
-              changeAmount={changeAmount}
-              removeCartItem={removeCartItem}
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout inCart={inCart} />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route
+              path="/cart"
+              element={<Cart inCart={inCart} setInCart={setInCart} />}
             />
-          }
-        />
-        {productRoutes}
-      </Routes>
+            <Route
+              path="/product/:id"
+              element={<ItemPage updateCart={updateCart} />}
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -10,9 +10,12 @@ body {
   color: rgb(116, 116, 116);
 }
 
+nav > div > ul > li {
+  transition: all 0.3s;
+}
+
 nav > div > ul > li:hover {
-  transition: all 0.5s;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.453);
+  transform: scale(1.2);
 }
 
 #feedback {
@@ -32,5 +35,6 @@ nav > div > ul > li:hover {
 
   100% {
     opacity: 0;
+    display: block;
   }
 }

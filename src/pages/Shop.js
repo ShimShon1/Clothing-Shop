@@ -38,19 +38,28 @@ export default function Shop() {
 
   return (
     <main className="">
-      <nav className=" text-lg grid grid-cols-7 text-center bg-slate-700 text-gray-200 cursor-pointer">
-        <span className="col-span-3" onClick={() => updateItemsShown("men")}>
+      <nav className=" grid cursor-pointer grid-cols-7 bg-slate-700 text-center text-lg text-gray-200">
+        <span
+          className="col-span-3 hover:bg-slate-500"
+          onClick={() => updateItemsShown("men")}
+        >
           Men
         </span>
-        <span className="bg-slate-600" onClick={() => updateItemsShown()}>
+        <span
+          className="bg-slate-600 hover:bg-slate-800"
+          onClick={() => updateItemsShown()}
+        >
           All
         </span>
-        <span className="col-span-3" onClick={() => updateItemsShown("women")}>
+        <span
+          className="col-span-3 hover:bg-slate-500"
+          onClick={() => updateItemsShown("women")}
+        >
           Women
         </span>
       </nav>
       <div
-        className="grid p-6 justify-center md:grid-cols-2 lg:grid-cols-4 gap-4
+        className="grid justify-center gap-4 p-6 md:grid-cols-2 lg:grid-cols-4
             "
       >
         {itemElements}
