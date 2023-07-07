@@ -36,7 +36,7 @@ let itemsData = [
     id: 3,
     price: 14.99,
     gender: "men",
-    desc: "Sed porta nisl vel diam posuere sodales. Phasellus ornare lectus consectetur vestibulum fermentum. Pellentesque at mollis metus. Nulla facilisi.",
+    desc: "Sed porta nisl vel diam posuere sodales. Phasellus ornare lectus consectetur vestibulum fermentum. Pellentesque at mollis metus. Nulla facilisi!",
   },
 
   {
