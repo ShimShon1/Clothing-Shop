@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 export default function ItemPage({ updateCart }) {
   const [amount, setAmount] = useState(1);
-
+  const [isAnimating, setIsAnimating] = useState(false);
   let item = {};
 
   for (let i of itemsData) {
@@ -18,13 +18,17 @@ export default function ItemPage({ updateCart }) {
   }
 
   function addFeedback() {
+    if (isAnimating) {
+      return;
+    }
     let noti = document.querySelector(".feedback");
     noti.id = "feedback";
     noti.classList.toggle("hidden");
-
+    setIsAnimating(true);
     setTimeout(() => {
       noti.id = "";
       noti.classList.toggle("hidden");
+      setIsAnimating(false);
     }, 4000);
   }
 
@@ -66,7 +70,11 @@ export default function ItemPage({ updateCart }) {
             Add To Cart
           </button>
 
-          <select name="amount" className="px-3" onChange={onAmountChange}>
+          <select
+            name="amount"
+            className="px-3"
+            onChange={onAmountChange}
+          >
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -76,7 +84,7 @@ export default function ItemPage({ updateCart }) {
         </form>
       </section>
 
-      <div className="feedback fixed bottom-0 left-0 hidden w-full bg-gray-700 p-6 text-center text-xl text-white opacity-0 md:text-2xl lg:text-2xl ">
+      <div className="feedback fixed bottom-0 left-0 hidden  w-full bg-gray-700 p-6 text-center text-xl text-white md:text-2xl lg:text-2xl ">
         Item has been added to your cart
       </div>
     </main>

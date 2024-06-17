@@ -948,10 +948,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.opacity-0 {
-  opacity: 0;
-}
-
 .opacity-20 {
   opacity: 0.2;
 }
@@ -1014,8 +1010,8 @@ nav > div > ul > li:hover {
 #feedback {
   -webkit-animation-name: notification;
           animation-name: notification;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1025,13 +1021,12 @@ nav > div > ul > li:hover {
     opacity: 0;
   }
 
-  50% {
+  75% {
     opacity: 100;
   }
 
   100% {
     opacity: 0;
-    display: block;
   }
 }
 
@@ -1040,13 +1035,12 @@ nav > div > ul > li:hover {
     opacity: 0;
   }
 
-  50% {
+  75% {
     opacity: 100;
   }
 
   100% {
     opacity: 0;
-    display: block;
   }
 }
 
